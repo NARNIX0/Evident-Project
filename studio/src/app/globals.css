@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* ─── Evident-inspired Design Tokens ─── */
+@theme {
+  --color-navy-950: #0a0f1e;
+  --color-navy-900: #0F172A;
+  --color-navy-800: #1A2744;
+  --color-navy-700: #243555;
+  --color-navy-600: #334d73;
+  --color-navy-500: #4a6a94;
+
+  --color-accent-500: #F97316;
+  --color-accent-400: #FB923C;
+  --color-accent-600: #EA580C;
+
+  --color-lavender-100: #E6E2ED;
+  --color-lavender-200: #D1CDE0;
+  --color-lavender-300: #B8B2CC;
+
+  --color-surface: #111827;
+  --color-surface-raised: #1E293B;
+  --color-surface-overlay: #273450;
+
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+
+  --color-border-subtle: #1E293B;
+  --color-border-medium: #334155;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-navy-950);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Geometric background motif ─── */
+.bg-evident-motif {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(230, 226, 237, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(26, 39, 68, 0.5) 0%, transparent 70%);
+}
+
+/* ─── Card styles ─── */
+.card-elevated {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-flat {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0.75rem;
+}
+
+/* ─── Pill button ─── */
+.pill-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 150ms ease;
+  cursor: pointer;
+}
+
+.pill-cta-primary {
+  background: var(--color-accent-500);
+  color: white;
+}
+
+.pill-cta-primary:hover {
+  background: var(--color-accent-600);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.pill-cta-secondary {
+  background: var(--color-surface-overlay);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-medium);
+}
+
+.pill-cta-secondary:hover {
+  background: var(--color-navy-700);
+  color: var(--color-text-primary);
+}
+
+/* ─── Section label ─── */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-700);
+  border-radius: 3px;
+}
+
+/* ─── Table styles ─── */
+.data-table th {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-medium);
+}
+
+.data-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.data-table tr:hover td {
+  background: rgba(249, 115, 22, 0.04);
+}
+
+/* ─── Editable cell ─── */
+.editable-cell {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  width: 100%;
+  transition: border-color 150ms;
+}
+
+.editable-cell:hover {
+  border-color: var(--color-border-medium);
+}
+
+.editable-cell:focus {
+  outline: none;
+  border-color: var(--color-accent-500);
+  background: var(--color-surface);
+}
+
+/* ─── Chart container ─── */
+.chart-container {
+  background: var(--color-navy-900);
+  border-radius: 1rem;
+  border: 1px solid var(--color-border-subtle);
+  padding: 1.5rem;
+}

@@ -4,9 +4,12 @@ __pycache__/
 .venv/
 .env
 .env.*
+!.env.example
 
 # Node
 node_modules/
+.next/
+*.tsbuildinfo
 dist/
 build/
 
@@ -23,5 +26,8 @@ outputs/
 
 # Secrets
 secrets/
+secret/
+secrets.md
+*secret*
 *.key
 *.pem
