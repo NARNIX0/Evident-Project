@@ -31,6 +31,33 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
+/* Emit tokens explicitly so the app does not fall back to browser light-mode
+   defaults if Tailwind's generated theme variables are unavailable.
+   Keep these values in sync with the @theme block above. */
+:root {
+  --color-navy-950: #0a0f1e;
+  --color-navy-900: #0F172A;
+  --color-navy-800: #1A2744;
+  --color-navy-700: #243555;
+  --color-navy-600: #334d73;
+  --color-navy-500: #4a6a94;
+  --color-accent-500: #F97316;
+  --color-accent-400: #FB923C;
+  --color-accent-600: #EA580C;
+  --color-lavender-100: #E6E2ED;
+  --color-lavender-200: #D1CDE0;
+  --color-lavender-300: #B8B2CC;
+  --color-surface: #111827;
+  --color-surface-raised: #1E293B;
+  --color-surface-overlay: #273450;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+  --color-border-subtle: #1E293B;
+  --color-border-medium: #334155;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
 /* ─── Base ─── */
 html {
   scroll-behavior: smooth;
@@ -43,6 +70,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Hard fallback utilities for the custom palette. Tailwind v4 normally emits
+   these from @theme; these keep the MVP visually correct in every build mode. */
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface\/80 { background-color: color-mix(in srgb, var(--color-surface) 80%, transparent); }
+.bg-surface-raised { background-color: var(--color-surface-raised); }
+.bg-surface-overlay { background-color: var(--color-surface-overlay); }
+.bg-navy-950 { background-color: var(--color-navy-950); }
+.bg-navy-900 { background-color: var(--color-navy-900); }
+.bg-navy-800 { background-color: var(--color-navy-800); }
+.bg-navy-700 { background-color: var(--color-navy-700); }
+.bg-accent-500 { background-color: var(--color-accent-500); }
+.bg-accent-600 { background-color: var(--color-accent-600); }
+.text-text-primary { color: var(--color-text-primary); }
+.text-text-secondary { color: var(--color-text-secondary); }
+.text-text-muted { color: var(--color-text-muted); }
+.text-accent-400 { color: var(--color-accent-400); }
+.text-accent-500 { color: var(--color-accent-500); }
+.border-border-subtle { border-color: var(--color-border-subtle); }
+.border-border-medium { border-color: var(--color-border-medium); }
 
 /* ─── Geometric background motif ─── */
 .bg-evident-motif {

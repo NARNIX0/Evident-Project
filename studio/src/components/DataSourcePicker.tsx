@@ -95,17 +95,17 @@ export default function DataSourcePicker({ onSelect }: DataSourcePickerProps) {
               <p className="text-text-muted text-xs mb-3">
                 {ds.rows.length} rows · {ds.columns.length} columns
               </p>
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-2">
                 {ds.columns.slice(0, 3).map((col) => (
                   <span
                     key={col.key}
-                    className="text-[0.6rem] px-2 py-0.5 rounded-full bg-navy-800 text-text-muted border border-border-subtle"
+                    className="text-[0.6rem] px-2 py-1 rounded-full bg-navy-800 text-text-muted border border-border-subtle"
                   >
                     {col.label}
                   </span>
                 ))}
                 {ds.columns.length > 3 && (
-                  <span className="text-[0.6rem] px-2 py-0.5 rounded-full bg-navy-800 text-text-muted">
+                  <span className="text-[0.6rem] px-2 py-1 rounded-full bg-navy-800 text-text-muted">
                     +{ds.columns.length - 3}
                   </span>
                 )}

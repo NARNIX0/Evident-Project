@@ -75,7 +75,7 @@ export default function AppShell({ step, children }: AppShellProps) {
 
       {/* ─── Footer ─── */}
       <footer className="border-t border-border-subtle py-4">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-[0.65rem] text-text-muted">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4 text-xs text-text-muted">
           <span>
             Demo only · Synthetic data · Not affiliated with Evident Insights
           </span>
