@@ -27,7 +27,7 @@ function inferColumnTypeFromRaw(rawValues: (string | undefined | null)[]): Colum
 
   for (const raw of nonNull) {
     const s = raw.trim();
-    if (/^-?\d+(\.\d+)?%$/.test(s)) {
+    if (/^\+?-?\d+(\.\d+)?%$/.test(s)) {
       pctCount++;
       numCount++;
     } else if (/^\$[\d,]+(\.\d+)?$/.test(s)) {
@@ -54,8 +54,8 @@ function cleanValue(raw: string): string | number | null {
   }
   const trimmed = raw.trim();
   // percentage
-  if (/^-?\d+(\.\d+)?%$/.test(trimmed)) {
-    return parseFloat(trimmed.replace("%", ""));
+  if (/^\+?-?\d+(\.\d+)?%$/.test(trimmed)) {
+    return parseFloat(trimmed.replace(/[+%,]/g, ""));
   }
   // currency like $1,234.56
   if (/^\$[\d,]+(\.\d+)?$/.test(trimmed)) {
