@@ -107,7 +107,7 @@ describe("recommendCharts", () => {
     expect(donut).toBeDefined();
   });
 
-  it("returns at most 4 recommendations", () => {
+  it("returns at most 6 recommendations", () => {
     const ds = makeDataset(
       [
         { key: "q", label: "Quarter", type: "string" },
@@ -123,6 +123,64 @@ describe("recommendCharts", () => {
     );
 
     const recs = recommendCharts(ds);
-    expect(recs.length).toBeLessThanOrEqual(4);
+    expect(recs.length).toBeLessThanOrEqual(6);
+  });
+
+  it("uses city labels and total bookings instead of rank for ranked tables", () => {
+    const ds = makeDataset(
+      [
+        { key: "col0", label: "Rank", type: "number" },
+        { key: "col1", label: "City", type: "string" },
+        { key: "col2", label: "Total Bookings", type: "number" },
+        { key: "col3", label: "Hotel Type", type: "string" },
+      ],
+      [
+        { col0: 1, col1: "Paris", col2: 3250000, col3: "Luxury, Business, Budget" },
+        { col0: 2, col1: "London", col2: 2870000, col3: "Luxury, Business, Budget" },
+        { col0: 3, col1: "Rome", col2: 2680000, col3: "Luxury, Business, Budget" },
+        { col0: 4, col1: "Barcelona", col2: 2510000, col3: "Luxury, Business, Budget, Hostels" },
+        { col0: 5, col1: "Berlin", col2: 2420000, col3: "Luxury, Business, Budget, Hostels" },
+      ]
+    );
+
+    const recs = recommendCharts(ds);
+    const top = recs[0];
+
+    expect(top.chartType).toBe("horizontal_bar");
+    expect(top.xKey).toBe("col2");
+    expect(top.yKey).toBe("col1");
+    expect(top.title).toContain("Total Bookings");
+    expect(top.title).toContain("City");
+  });
+
+  it("recommends year-pivot line and grouped bar with all year valueKeys for talent headcount tables", () => {
+    const ds = makeDataset(
+      [
+        { key: "region", label: "Region", type: "string" },
+        { key: "fte2023", label: "2023 FTEs", type: "number" },
+        { key: "fte2024", label: "2024 FTEs", type: "number" },
+        { key: "fte2025", label: "2025 FTEs", type: "number" },
+        { key: "pct", label: "% Change", type: "percentage" },
+      ],
+      [
+        { region: "North America", fte2023: 1200, fte2024: 1450, fte2025: 1780, pct: 22.5 },
+        { region: "Europe", fte2023: 980, fte2024: 1100, fte2025: 1320, pct: 18.2 },
+      ]
+    );
+
+    const recs = recommendCharts(ds);
+    const line = recs.find((r) => r.chartType === "line");
+    const grouped = recs.find((r) => r.chartType === "grouped_bar");
+
+    expect(line).toBeDefined();
+    expect(line?.chartLayout).toBe("year_pivot_lines");
+    expect(line?.categoryKey).toBe("region");
+    expect(line?.valueKeys).toEqual(["fte2023", "fte2024", "fte2025"]);
+    expect(line?.yAxisLabel).toBe("FTEs");
+
+    expect(grouped).toBeDefined();
+    expect(grouped?.valueKeys).toEqual(["fte2023", "fte2024", "fte2025"]);
+    expect(grouped?.yAxisLabel).toBe("FTEs");
+    expect(grouped?.xKey).toBe("region");
   });
 });
