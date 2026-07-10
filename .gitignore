@@ -5,6 +5,9 @@ __pycache__/
 .env
 .env.*
 !.env.example
+studio/.env
+studio/.env.*
+!studio/.env.example
 
 # Node
 node_modules/
@@ -12,17 +15,27 @@ node_modules/
 *.tsbuildinfo
 dist/
 build/
+studio/node_modules/
+studio/.next/
 
 # OS / editors
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+*.swp
+*~
 
-# Project artifacts
+# Accidental Windows NUL device file
+nul
+studio/nul
+**/nul
+
+# Project build / runtime artifacts
 *.log
 .cache/
 outputs/
+extraction-council-logs/
 
 # Secrets
 secrets/
@@ -31,3 +44,40 @@ secrets.md
 *secret*
 *.key
 *.pem
+
+# ---------------------------------------------------------------------------
+# Local agent / Cursor / Claude development scaffolding (not for GitHub deploy)
+# ---------------------------------------------------------------------------
+.agents/
+.cursor/
+.claude/
+.hermes/
+.firecrawl/
+skills-lock.json
+
+# Agent operating docs (local orchestration only)
+AGENTS.md
+CLAUDE.md
+CURSOR_HANDOFF.md
+
+# Internal planning, MVP notes, research, and handoff docs
+PROJECT_CONTEXT.md
+FEATURES_AND_USE_CASES.md
+EVIDENT_SOURCE_RESEARCH.md
+EVIDENT_DATAVIZ_STYLE_GUIDE.md
+MVP_2_TO_5_SPEC.md
+MVP4.6_CURSOR_PROMPTS.md
+MVP-4.5
+MVP-*
+
+# Sample / scratch meeting notes at repo root (fixtures live under studio tests)
+/Evident_Client_Meeting_Notes*.txt
+/Evident_Meeting_Notes*.txt
+!studio/src/lib/__tests__/fixtures/
+!studio/src/lib/__tests__/fixtures/**
+
+# Local task boards and one-off scripts
+tasks/
+scripts/
+docs/development-workflow.md
+docs/spec-template.md
