@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* MVP 1: static-first, no image domains needed */
+  serverExternalPackages: ["@open-multi-agent/core"],
 };
 
 export default nextConfig;
