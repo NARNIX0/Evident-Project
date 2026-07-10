@@ -1,20 +1,30 @@
 /**
- * Export a chart DOM element as a PNG image.
- * Uses html-to-image for client-side rendering.
+ * Capture a chart DOM element as a PNG data URL.
  */
-export async function exportChartAsPng(
+export async function elementToPngDataUrl(
   element: HTMLElement,
-  filename: string = "evident-chart.png"
-): Promise<void> {
+  backgroundColor: string
+): Promise<string> {
   const { toPng } = await import("html-to-image");
 
-  const dataUrl = await toPng(element, {
-    backgroundColor: "#0F172A",
+  return toPng(element, {
+    backgroundColor,
     pixelRatio: 2,
     style: {
       transform: "none",
     },
   });
+}
+
+/**
+ * Export a chart DOM element as a PNG download.
+ */
+export async function exportChartAsPng(
+  element: HTMLElement,
+  filename: string = "evident-chart.png",
+  backgroundColor: string = "#ffffff"
+): Promise<void> {
+  const dataUrl = await elementToPngDataUrl(element, backgroundColor);
 
   const link = document.createElement("a");
   link.download = filename;
