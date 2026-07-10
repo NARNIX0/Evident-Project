@@ -24,6 +24,15 @@ describe("parseCsv", () => {
     expect(ds.rows[0].values.pct).toBe(28);
   });
 
+  it("parses positive signed percentages like +22.5%", () => {
+    const csv = "Region,Change\nNA,+22.5%\nEU,+18.2%";
+    const ds = parseCsv(csv);
+
+    expect(ds.columns[1].type).toBe("percentage");
+    expect(ds.rows[0].values.change).toBe(22.5);
+    expect(ds.rows[1].values.change).toBe(18.2);
+  });
+
   it("handles null/empty values", () => {
     const csv = "Name,Value\nA,10\nB,\nC,N/A";
     const ds = parseCsv(csv);
