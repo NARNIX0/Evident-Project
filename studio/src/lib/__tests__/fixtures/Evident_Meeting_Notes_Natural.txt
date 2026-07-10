@@ -1,0 +1,17 @@
+﻿Evident Insights – Internal Client Sync Notes
+Date: June 12th 2026
+Attendees: Georgia, Michael, Lena, Raj
+
+We kicked off with a quick review of how the client performed on AI adoption last year. Overall investment in AI use cases hit roughly 619 million dollars, with fraud detection leading the way at around 184 million, followed closely by credit risk modelling at 162 million. Customer onboarding saw the strongest growth at 31 percent year over year.
+
+On the talent side, things look quite different across regions. North America now has over 7,200 AI-related FTEs, up from about 5,900 the year before. Europe is growing more steadily at around 4,400 people, while Asia-Pacific jumped 27 percent to reach 3,650. Latin America remains small but is expanding fast, though average tenure there is under 2 years which could become a retention issue.
+
+Risk and compliance numbers were a bit mixed. We now have 1,670 models in production, but the number flagged as high risk climbed to 241, which is above the internal target of 200. Audit times also slipped, averaging 61 days in the final quarter against a goal of 45. Explainability scores above 80 percent landed at 69 percent, still short of the 75 percent target.
+
+When we broke things down by institution type, global banks are clearly ahead with 87 percent already using AI in core processes. Fintechs are close behind at 79 percent and seem the most aggressive about scaling further. Regional banks and asset managers are lagging, sitting at 61 percent and 43 percent respectively.
+
+A few risks came up repeatedly in the discussion. Model drift remains a high-likelihood, high-impact issue. Regulatory non-compliance was flagged as critical even though likelihood is only medium. Talent attrition is a growing concern, especially in faster-growing regions. Data quality problems were also highlighted as something that needs ongoing remediation.
+
+Next steps include Georgia sharing the latest benchmark dataset by the 20th, Raj running a deeper retention analysis by region, and the client team giving feedback on chart formats ahead of the Q3 deck. We agreed to reconvene on the 3rd of July.
+
+Notes prepared by Lena Voss – internal only.

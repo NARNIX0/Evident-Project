@@ -1,0 +1,80 @@
+Evident Insights – Client Strategy Session
+Date: 12 June 2026
+Attendees: Georgia Atallah (Evident), Michael Torres (Head of AI Strategy, Client), Lena Voss (Client Data Lead), Raj Patel (Evident Research)
+
+Agenda:
+1. Review of 2025 AI Adoption benchmarks
+2. Talent and investment trends
+3. Risk and compliance metrics
+4. Regional performance comparison
+5. Next steps and deliverables
+
+---
+
+1. AI Investment by Use Case (2025)
+
+| Use Case                  | Investment ($M) | YoY Growth | % of Total Budget |
+|---------------------------|------------------|------------|-------------------|
+| Fraud Detection           | 184              | +22%       | 18%               |
+| Credit Risk Modelling     | 162              | +17%       | 16%               |
+| Customer Onboarding       | 119              | +31%       | 12%               |
+| Regulatory Reporting      | 97               | +9%        | 9%                |
+| Claims Automation         | 84               | +14%       | 8%                |
+| Chatbots & Virtual Agents | 73               | +27%       | 7%                |
+
+---
+
+2. AI Talent Headcount Trends
+
+| Region       | 2023 FTEs | 2024 FTEs | 2025 FTEs | % Change (24-25) | Avg. Tenure (years) |
+|--------------|-----------|-----------|-----------|------------------|---------------------|
+| North America| 4,820     | 5,910     | 7,240     | +22.5%           | 2.8                 |
+| Europe       | 3,150     | 3,780     | 4,410     | +16.7%           | 3.1                 |
+| Asia-Pacific | 2,090     | 2,870     | 3,650     | +27.2%           | 2.4                 |
+| Latin America| 680       | 920       | 1,180     | +28.3%           | 1.9                 |
+
+---
+
+3. Model Risk & Compliance Metrics (2025)
+
+| Metric                              | Q1 2025 | Q2 2025 | Q3 2025 | Q4 2025 | Target |
+|-------------------------------------|---------|---------|---------|---------|--------|
+| Models in Production                | 1,240   | 1,380   | 1,510   | 1,670   | 1,800  |
+| Models with High Risk Rating        | 187     | 204     | 219     | 241     | <200   |
+| Average Time to Audit (days)        | 47      | 52      | 49      | 61      | 45     |
+| % Models with Explainability Score >80 | 64%  | 67%     | 71%     | 69%     | 75%    |
+
+---
+
+4. AI Adoption by Institution Type
+
+| Institution Type       | % Using AI in Core Processes | % Planning to Scale in 2026 | Average Budget ($M) |
+|------------------------|------------------------------|-----------------------------|---------------------|
+| Global Banks           | 87%                          | 72%                         | 312                 |
+| Regional Banks         | 61%                          | 48%                         | 87                  |
+| Insurance Carriers     | 54%                          | 61%                         | 124                 |
+| Asset Managers         | 43%                          | 39%                         | 68                  |
+| Fintechs               | 79%                          | 81%                         | 45                  |
+
+---
+
+5. Key Risks Identified (Client Internal)
+
+| Risk Category             | Likelihood | Impact | Mitigation Status     | Owner          |
+|---------------------------|------------|--------|-----------------------|----------------|
+| Model Drift               | High       | High   | Monitoring in place   | Data Science   |
+| Regulatory Non-Compliance | Medium     | Critical | Audit scheduled Q3    | Compliance     |
+| Talent Attrition          | High       | Medium | Retention program     | HR             |
+| Vendor Lock-in            | Medium     | High   | Multi-vendor strategy | Procurement    |
+| Data Quality Issues       | High       | High   | Remediation ongoing   | Data Engineering |
+
+---
+
+Action Items:
+- Georgia to share latest AI Index dataset by 20 June
+- Client team to provide feedback on chart formats for Q3 deck
+- Raj to run deeper analysis on talent retention by region
+- Next sync scheduled for 3 July 2026
+
+Notes prepared by: Lena Voss
+Distribution: Internal + Client (Confidential)
